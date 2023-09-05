@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS User(
 CREATE TABLE IF NOT EXISTS Contact(
     Id_Contact BIGINT UNSIGNED AUTO_INCREMENT,
     Name VARCHAR(20) NOT NULL,
-    First_Surname VARCHAR(20) NOT NULL,
+    First_Surname VARCHAR(20),
     Second_Surname VARCHAR(20),
     Email VARCHAR(50),
     Phone_Number VARCHAR(13) NOT NULL,
