@@ -108,7 +108,7 @@ const signIn = async (req: Request, res: Response): Promise<void> => {
                 Password: userList[0].Password
             }
             const token: string = jwt.sign(user, envData.secret_token_word, { expiresIn: '1h' })
-            res.header('Auth-token', token).json({ message: 'Signing successfully' })
+            res.header('Auth-token', token).json(user)
         } else {
             res.status(401).json({ message: 'Error: user or password incorrect' })
         }
