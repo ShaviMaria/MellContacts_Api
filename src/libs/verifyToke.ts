@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 import envData from '../config'
+import IUser from '../models/user.model'
 
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -11,7 +12,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
             return
         }
 
-        const payload = jwt.verify(token, envData.secret_token_word)
+        const payload = jwt.verify(token, envData.secret_token_word) as IUser
         req.user = payload
         next()
     } catch(error: any) {
