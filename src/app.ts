@@ -3,6 +3,7 @@ import morgan from 'morgan'
 
 //Routes imports
 import usersRouter from './routes/users.routes'
+import contactsRouter from './routes/contacts.routes'
 
 const app: Application = express()
 
@@ -22,5 +23,6 @@ app.use((_req, res, next) => {
 
 //Routes
 app.use('/api/Users', usersRouter)
+app.use('/api/Contacts', contactsRouter)
 
 export default app
